@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    }
+
+    .container{
+        height: auto;
+        width: 100%;
+        background-image:url(images/background.jpg);
+        background-position: center;
+        background-size:cover;
+        box-sizing: border-box;
+        
+    }
+ul, ol{
+    list-style:var(--rListListStyle, none) !important;
+}
+.r-link{
+    display: var(--rLinkDisplay, inline-flex) !important;
+  }
+  
+  .r-link[href]{
+    color: var(--rLinkColor) !important;
+    text-decoration: var(--rLinkTextDecoration, none) !important;
+  }
+  
+  .r-list{
+    padding-left: var(--rListPaddingLeft, 0) !important;
+    margin-top: var(--rListMarginTop, 0) !important;
+    margin-bottom: var(--rListMarginBottom, 0) !important;
+    list-style: var(--rListListStyle, none) !important;
+  }
+  
+  
+  /*
+  =====
+  CORE STYLES
+  =====
+  */
+  
+    
+.menu{
+    --rLinkColor: var(--menuLinkColor, currentColor);
+  }
+  
+  .menu__link{
+    display: var(--menuLinkDisplay, block);
+  }
+  
+  
+  .menu__link:focus{
+    outline: var(--menuLinkOutlineWidth, 4px) solid var(--menuLinkOutlineColor, currentColor);
+    outline-offset: var(--menuLinkOutlineOffset);
+  }
+
+  
+  .menu:hover .menu__link:not(:hover){
+    --rLinkColor: var(--menuLinkColorUnactive, rgba(22, 22, 22, .35));
+  }
+  
+  
+  
+  .menu{
+    background-color: var(--menuBackgroundColor, #f0f0f0);
+    box-shadow: var(--menuBoxShadow, 0 1px 3px 0 rgba(0, 0, 0, .12), 0 1px 2px 0 rgba(0, 0, 0, .24));
+  }
+  
+  .menu__list{
+    display: flex;  
+  }
+  
+  .menu__link{
+    padding: var(--menuLinkPadding, 1.5rem 2.5rem);
+    font-weight: 700px;
+
+  }
+  .submenu{
+    position: absolute;
+    background-color: #dd9d9d;
+    padding: 5px;
+    width: 100;
+   visibility: hidden;
+   transition: opacity 1.5;
+   display: block;
+   }
+   
+   .submenu__link{
+       display: block;
+       color:#fff;
+   }
+   
+   
+   .menu__list:hover  .submenu{
+     display: block;
+    visibility: visible;
+    opacity: 1;
+   }
+ 
+  .text-underlined{
+    position: relative;
+    overflow: hidden;
+    will-change: color;
+    transition: color .25s ease-out;  
+  }
+  
+  .text-underlined::before, 
+  .text-underlined::after{
+    content: "";
+    width: 0;
+    height: 3px;
+    background-color: var(--textUnderlinedLineColor, currentColor);
+  
+    will-change: width;
+    transition: width .1s ease-out;
+  
+    position: absolute;
+    bottom: 0;
+  }
+  
+  .text-underlined::before{
+    left: 50%;
+    transform: translateX(-50%); 
+  }
+  
+  .text-underlined::after{
+    right: 50%;
+    transform: translateX(50%); 
+  }
+  
+  .text-underlined:hover::before, 
+  .text-underlined:hover::after{
+    width: 100%;
+    transition-duration: .2s;
+  }
+  
+  /*
+  =====
+  SETTINGS
+  =====
+  */
+  
+  .page__custom-settings{
+    --menuBackgroundColor: #dd9d9d;
+    --menuLinkColor: #fff;
+    --menuLinkColorUnactive: #c75a5a;
+    --menuLinkOutlineOffset: -.8rem; 
+  }
+  
+
+  
+  body{
+    
+    font-family: 'Quicksand', sans-serif;
+    margin: 0;
+    min-height: 0vh;
+    display: flex;  
+    flex-direction: column;
+  }
+  
+  .page{
+    box-sizing: border-box;
+    max-width: 780px;
+    padding-left: .75rem;
+    padding-right: .75rem;
+    margin: auto;
+  }
+  
+
+    .portada h1{
+        font-size: 50px;
+        margin-top:24px;
+        margin-bottom: 24px;
+        margin-left: 180px;
+        text-align: center;
+    }
+    .portada h2{
+        font-size: 30px;
+        margin-top:24px;
+        margin-bottom: 24px;
+        margin-left: 200px;
+        text-align: center;
+    }
+
+    .card{
+        align-self: center;
+        width:90%;
+        margin:70px 70px;
+        box-shadow:0 0 10px rgba(0,0,0,5);
+        background:seashell;
+        text-align: justify;
+    }
+    .card h1{
+        font-size: 30px;
+        margin-top:24px;
+        margin-bottom: 24px;
+        margin-left: 180px;
+        text-align: center;
+    }
+    .card h2{
+        font-size: 20px;
+        margin-top:24px;
+        margin-bottom: 24px;
+        margin-left: 180px;
+        text-align: center;
+        
+    }
+  
+    .fotoaprendiz{
+        width:130px;
+        height: 130px;
+        border-radius:70%;
+        display: block;
+        top: 160px;
+        left: 140px;
+        position:absolute;
+
+
+    }
+
+    /*tablas de multiplicar*/
+    caption{
+      font-size: 50px;
+      margin-top:24px;
+      color: #5e5b5b;
+    }
+    table{
+        background-color:rgb(252, 181, 181);
+        text-align: left;
+        border-collapse: collapse;
+        width: 100%;
+        border-bottom-color: black;
+     
+    }
+    th, td{
+        padding: 20px;
+    }
+    th{
+      background-color:rgb(245, 237, 237);
+    }
+    
+    thead{
+        background-color: #a5485f;
+        border-bottom: solid 5px #014938;
+        color: white;
+    }
+    footer{
+        background-color: #dd9d9d;
+        text-align: center;
+        border-collapse: collapse;
+        width: 100%;
+        display: block;
+    }
+
+    
+    
+    
